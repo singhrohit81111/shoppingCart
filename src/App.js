@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import rr from './data.json';
 import './style.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Add } from "./Redux/Actions";
 
@@ -9,9 +9,9 @@ function App() {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
-  const handleClick = (e) => {
+  /*const handleClick = (e) => {
     navigate(`/${e}`);
-  }
+  }*/
   const handleClick1 = (e) => {
     console.log(e);
     dispatch(Add(e));
@@ -47,7 +47,7 @@ function App() {
                 <span>Rs.</span>
                 <span >{e.price}</span>
               </div>
-              <div className="h5" onClick={() => { handleClick(e.name) }}><span>...</span><span>more details</span></div>
+              <div className="h5" ><Link to={`/${e.id}`}><span>...</span><span>more details</span></Link></div>
               <div className="bt">
                 <button onClick={() => { handleClick1(e) }}>BUY</button>
               </div>

@@ -1,25 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React from 'react'
+import react, { useEffect, useState } from "react";
 import cc from '../data.json';
 import './style2.css';
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { Add } from "../Redux/Actions";
+import { Add } from '../Redux/Actions';
+import { useNavigate, useParams } from "react-router-dom";
 
-export default function S23() {
+
+export default function Comp() {
+    const navigate = useNavigate();
     const [data, setData] = useState([]);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const { id } = useParams();
+
     useEffect(() => {
-        setData(cc.filter(e => {
-            return e.id === 2;
+        console.log(id);
+        setData(cc.filter((z) => {
+            console.log(typeof(id));
+            return z.id === +id;
         }));
         console.log(data);
-    }, [])
+    }, [id])
     const handleClick = (e) => {
         console.log(e);
         dispatch(Add(e));
         navigate("/addtocart");
     }
+    console.log(cc);
     return (
         <div className="i1">
             {data.map(e => {

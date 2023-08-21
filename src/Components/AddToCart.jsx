@@ -69,7 +69,7 @@ export default function AddToCart() {
                 </div>
             })}
             {data.length === 0 && <div className='mm'>Add items in the cart</div>}
-            {data.length>0 && <div className='ch3'>
+            {data.length > 0 && <div className='ch3'>
                 <div className='pd0'>
                     PRICE DETAILS:
                 </div>

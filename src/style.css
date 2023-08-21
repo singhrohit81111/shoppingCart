@@ -11,7 +11,7 @@
 
 .h3{
     border: 1px solid black;
-    height: 34vh;
+    height: 35vh;
     max-width: 30vw;
     display: flex;
     justify-content: center;
@@ -69,4 +69,8 @@ button:hover{
 .h0{
     display: flex;
     justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
 }
